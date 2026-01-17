@@ -19,6 +19,9 @@ public class LogProcessingService
     /// </remarks>
     public LogProcessingService(ILogParser parser, ILogAnalyzer analyzer)
     {
+        ArgumentNullException.ThrowIfNull(parser);
+        ArgumentNullException.ThrowIfNull(analyzer);
+
         _parser = parser;
         _analyzer = analyzer;
     }
@@ -27,12 +30,16 @@ public class LogProcessingService
     {
         // Parse the log file
         var parseResult = _parser.ParseFile(filePath);
-
-        // Analyze the parsed entries
         var analysisResult = _analyzer.AnalyzeLogs(parseResult.SuccessfulEntries, topCount);
 
-        analysisResult.ParseMetadata = parseResult;
-        return analysisResult;
+        // Attach parse metadata to the analysis result
+        return new AnalysisResult
+        {
+            UniqueIpAddressCount = analysisResult.UniqueIpAddressCount,
+            TopUrls = analysisResult.TopUrls,
+            TopIpAddresses = analysisResult.TopIpAddresses,
+            ParseMetadata = parseResult
+        };
     }
 
     /// <summary>

@@ -8,7 +8,7 @@ public class AnalysisResult
     public int UniqueIpAddressCount { get; set; }
     public IReadOnlyList<UrlVisit> TopUrls { get; set; } = Array.Empty<UrlVisit>();
     public IReadOnlyList<IpActivity> TopIpAddresses { get; set; } = Array.Empty<IpActivity>();
-    public ParseResult ParseMetadata { get; set; } = new();
+    public ParseResult ParseMetadata { get; set; } = new ParseResult();
 
     /// <summary>
     /// Formats the analysis results for display.
