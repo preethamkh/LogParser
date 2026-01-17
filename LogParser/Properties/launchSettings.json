@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LogParser": {
+      "commandName": "Project",
+      "commandLineArgs": "programming-task-example-data.log"
+    }
+  }
+}
