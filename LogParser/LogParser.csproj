@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Analyzers\" />
     <Folder Include="Services\" />
-    <Folder Include="Parsers\" />
   </ItemGroup>
 
 </Project>
