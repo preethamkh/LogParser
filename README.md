@@ -123,4 +123,4 @@ Tests follow the **AAA Pattern** (Arrange, Act, Assert):
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
+MIT License
