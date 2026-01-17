@@ -19,7 +19,7 @@ Analyzes log files to answer these questions:
 
 ```bash
 # Clone and build
-git clone https://github.com/YOUR_USERNAME/LogParser.git
+git clone https://github.com/preethamkh/LogParser.git
 cd LogParser
 dotnet build
 
