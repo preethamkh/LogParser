@@ -34,4 +34,23 @@ public class LogProcessingService
         analysisResult.ParseMetadata = parseResult;
         return analysisResult;
     }
+
+    /// <summary>
+    /// Gets basic information about a log file.
+    /// </summary>
+    public string GetFileInfo(string filePath)
+    {
+        if (!File.Exists(filePath))
+        {
+            return $"File not found: {filePath}";
+        }
+
+        var fileInfo = new FileInfo(filePath);
+        var lineCount = File.ReadLines(filePath).Count();
+
+        return $"File: {fileInfo.Name}\n" +
+               $"Size: {fileInfo.Length:N0} bytes\n" +
+               $"Lines: {lineCount:N0}\n" +
+               $"Last Modified: {fileInfo.LastWriteTime:yyyy-MM-dd HH:mm:ss}";
+    }
 }
