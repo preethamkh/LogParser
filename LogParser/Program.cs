@@ -8,9 +8,9 @@ namespace LogParser;
 /// 2. Parses and analyzes the log file
 /// 3. Displays the results to the console
 /// </summary>
-class Program
+internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         try
         {
