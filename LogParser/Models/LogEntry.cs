@@ -56,6 +56,7 @@ public class LogEntry
     public override string ToString()
     {
         return $"[{Timestamp}] {IpAddress} {HttpMethod} {Url} -> {StatusCode}";
+        // todo: might not need the one below, remove if so towards the end of project if unused/during cleanup
         //return $"{IpAddress} - [{Timestamp}] \"{HttpMethod} {Url} {HttpVersion}\" {StatusCode} {ResponseSize} \"{UserAgent}\"";
     }
 
