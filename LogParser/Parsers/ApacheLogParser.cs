@@ -27,6 +27,9 @@ public partial class ApacheLogParser : ILogParser
         matchTimeoutMilliseconds: 1000)]
     private static partial Regex LogLineRegex();
 
+    /// <summary>
+    /// Parses the entire log file and returns results.
+    /// </summary>
     public ParseResult ParseFile(string filePath)
     {
         // Validate input and exit early if the file path is invalid
@@ -74,6 +77,12 @@ public partial class ApacheLogParser : ILogParser
         };
     }
 
+    /// <summary>
+    /// Attempts to parse a single log line.
+    /// </summary>
+    /// <param name="line">The log line to parse.</param>
+    /// <param name="logEntry">The parsed entry if successful; null otherwise.</param>
+    /// <returns>True if parsing succeeded; false otherwise.</returns>
     public bool TryParseLine(string line, out LogEntry? logEntry)
     {
         // need to assign out parameter first
