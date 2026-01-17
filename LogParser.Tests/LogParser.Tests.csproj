@@ -28,9 +28,4 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Analyzers\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
