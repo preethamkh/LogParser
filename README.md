@@ -27,15 +27,9 @@ dotnet build
 dotnet run --project LogParser/LogParser.csproj programming-task-example-data.log
 ```
 
-### Running Tests
-
-```bash
-dotnet test
-```
-
 ### Example Output
-```
 
+```
 Using launch settings from LogParser\Properties\launchSettings.json...
 === Log Parser ===
 
@@ -119,7 +113,48 @@ LogParser/
 - **Integration Tests**: Test the complete workflow end-to-end
 - **Edge Case Tests**: Malformed data, empty files, null inputs, etc.
 
-Tests follow the **AAA Pattern** (Arrange, Act, Assert):
+Tests follow the **AAA Pattern** (Arrange, Act, Assert).
+
+**Test coverage and CI integration are directly available via [GitHub Actions](https://github.com/preethamkh/LogParser/actions).**
+
+### Running Tests
+
+```bash
+dotnet test
+```
+OR
+
+### Run Tests with Coverage
+
+```bash
+dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/
+```
+
+### Example Output
+
+```
+Restore complete (0.4s)
+  LogParser succeeded (0.1s) → LogParser\bin\Debug\net8.0\LogParser.dll
+  LogParser.Tests succeeded (0.1s) → LogParser.Tests\bin\Debug\net8.0\LogParser.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.22)
+[xUnit.net 00:00:00.05]   Discovering: LogParser.Tests
+[xUnit.net 00:00:00.07]   Discovered:  LogParser.Tests
+[xUnit.net 00:00:00.07]   Starting:    LogParser.Tests
+     Warning:
+     The component "Fluent Assertions" is governed by the rules defined in the Xceed License Agreement and
+     the Xceed Fluent Assertions Community License. You may use Fluent Assertions free of charge for
+     non-commercial use only. An active subscription is required to use Fluent Assertions for commercial use.
+     Please contact Xceed Sales mailto:sales@xceed.com to acquire a subscription at a very low cost.
+     A paid commercial license supports the development and continued increasing support of
+     Fluent Assertions users under both commercial and community licenses. Help us
+     keep Fluent Assertions at the forefront of unit testing.
+     For more information, visit https://xceed.com/products/unit-testing/fluent-assertions/
+[xUnit.net 00:00:00.13]   Finished:    LogParser.Tests
+  LogParser.Tests test succeeded (0.6s)
+
+Test summary: total: 50, failed: 0, succeeded: 50, skipped: 0, duration: 0.6s
+Build succeeded in 1.4s
+```
 
 ## 📄 License
 
