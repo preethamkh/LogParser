@@ -1,6 +1,6 @@
 ﻿using LogParser.Models;
 
-namespace LogParser.Parsers;
+namespace LogParser.Contracts;
 
 /// <summary>
 /// Defines the contract for parsing log files.

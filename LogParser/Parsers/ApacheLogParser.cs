@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using LogParser.Contracts;
 using LogParser.Models;
 
 namespace LogParser.Parsers;
