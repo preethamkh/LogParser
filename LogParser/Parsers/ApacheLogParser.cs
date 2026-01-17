@@ -112,11 +112,11 @@ public partial class ApacheLogParser : ILogParser
             //var referrer = match.Groups["referrer"].Value;
             var userAgent = match.Groups["useragent"].Value;
 
-            // Parse timestamp
-            //if (!DateTime.TryParseExact(timestampStr, "dd/MMM/yyyy:HH:mm:ss zzz",
+            // todo: feature - validate timestamp format
+            //if (!DateTime.TryParseExact(timestamp, "dd/MMM/yyyy:HH:mm:ss zzz",
             //    System.Globalization.CultureInfo.InvariantCulture,
             //    System.Globalization.DateTimeStyles.None,
-            //    out var timestamp))
+            //    out var timestampInDateTime))
             //{
             //    return false;
             //}
@@ -150,7 +150,8 @@ public partial class ApacheLogParser : ILogParser
                 StatusCode = statusCode,
                 ResponseSize = responseSize,
                 //Referrer = referrer,
-                UserAgent = userAgent
+                UserAgent = userAgent,
+                RawLine =line
             };
             return true;
         }
