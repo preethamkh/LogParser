@@ -1,7 +1,7 @@
 ﻿using LogParser.Contracts;
 using LogParser.Models;
 
-namespace LogParser.Parsers;
+namespace LogParser.Analyzers;
 
 public class LogAnalyzer : ILogAnalyzer
 {

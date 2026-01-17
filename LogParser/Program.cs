@@ -1,4 +1,5 @@
-﻿using LogParser.Parsers;
+﻿using LogParser.Analyzers;
+using LogParser.Parsers;
 using LogParser.Services;
 
 namespace LogParser;
