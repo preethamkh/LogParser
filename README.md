@@ -24,7 +24,7 @@ cd LogParser
 dotnet build
 
 # Run with sample data
-dotnet run --project LogParser/LogParser.csproj programming-task-example-data.log
+dotnet run --project LogParser/LogParser.csproj LogParser/programming-task-example-data.log
 ```
 
 ### Example Output
